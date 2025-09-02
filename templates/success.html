@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Success - EventPro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  {% include 'navbar.html' %}
+
+  <section class="success">
+    <h2>Success!</h2>
+    <p>Your submission has been received. We will contact you soon.</p>
+    <a href="/" class="btn">Go Back Home</a>
+  </section>
+
+  {% include 'footer.html' %}
+</body>
+</html>

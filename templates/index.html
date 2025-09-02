@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EventPro - Home</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<!-- Hero Slider -->
+<div class="slider">
+    <div class="slides">
+        <div class="slide" style="background-image: url('https://image2url.com/images/1756812816508-5cbd9f25-e267-4546-bf8d-0021eea0b73e.png');">
+            <h1>Weddings Made Perfect</h1>
+        </div>
+        <div class="slide" style="background-image: url('https://image2url.com/images/1756813321183-ab5291f1-22a6-49ed-85ba-23e2a5d50a4a.png');">
+            <h1>Birthday Parties That Shine</h1>
+        </div>
+        <div class="slide" style="background-image: url('https://image2url.com/images/1756813773887-a48fea32-022a-48be-a88e-87cc28d31d21.jpg');">
+            <h1>Corporate Events with Style</h1>
+        </div>
+    </div>
+</div>
+
+<section class="about">
+<h2>About Our Events</h2>
+<p>We specialize in weddings, birthdays, corporate events, concerts, and more. Our team ensures every event is stress-free, memorable, and personalized to your needs. From planning to execution, we handle all aspects with professionalism and creativity.</p>
+</section>
+
+<section class="why-us">
+<h2>Why Choose EventPro?</h2>
+<p>Experienced team, reliable vendors, customized themes, on-time execution, budget-friendly packages, 24/7 support, creative ideas, full coordination, high-quality service, memorable moments, trusted by hundreds, professional management, hassle-free planning, innovative solutions, attention to detail, customer satisfaction, exceptional execution, seamless experience, value for money, premium service.</p>
+</section>
+
+{% include 'footer.html' %}
+
+<script>
+$(document).ready(function(){
+    let index = 0;
+    let slides = $(".slides .slide");
+    setInterval(function(){
+        slides.eq(index).fadeOut(1000); // fade out current slide
+        index = (index+1) % slides.length;
+        slides.eq(index).fadeIn(1000);  // fade in next slide
+    }, 5000); // change slide every 5 seconds
+});
+</script>
+
+
+</body>
+</html>

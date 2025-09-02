@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register - EventPro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  {% include 'navbar.html' %}
+
+  <section class="form-section">
+    <h2>Event Registration</h2>
+    <form action="/register" method="POST" class="form-card">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="event">Select Event</label>
+      <select id="event" name="event" required>
+        <option value="">-- Choose an Event --</option>
+        <option value="Wedding Ceremony">Wedding Ceremony</option>
+        <option value="Birthday Party">Birthday Party</option>
+        <option value="Corporate Event">Corporate Event</option>
+        <option value="Concert">Concert</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  {% include 'footer.html' %}
+</body>
+</html>
